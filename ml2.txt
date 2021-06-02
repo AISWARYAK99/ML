@@ -1,0 +1,241 @@
+What is AI?
+
+*It is incoprating human intelligence to machnes.
+*Enables machine to mimic human behaviour.
+*Possible for machine to learn from experience.
+*Symbolic Logic-predicates and logics,rules engines,expert systems and knowledge graphs.
+
+Types of AI?
+*Artificial Narrow Intelligence
+	Weak AI.
+	Specific tasks.
+	No genuine intelligence,no self-evaluation.
+*Artificial General Intelligence
+	Strong AI.
+	Ability to perform any intelligent task that a human can.
+	Very strong processing unit.
+*Arificial Super Intelligence
+	Capability of computers surpasses the capacity of human intelligence and ability.
+
+
+What is ML?
+
+Its the ablility to learn the machine without explicitly programming.
+By algorithms we are trying to impose intelligence through mathematical models to the machine.
+
+Terms used in ML
+*Algorithm-Set of rules used to learn information from data set and draw insights from it.Logic behind ML is ML Algorithms.
+*Model-Main component in Ml which is trained by ML Algorithms.
+*Predictar variable-Features of data used to predict the output.
+*Response variable-Feature of output variable that needs to be predicted by using predictar variables.
+*Training data-It is subset of data set which is used to construct ML Model.It helps to learn similar patterns from data set.
+*Testing data-The ML model is evaluated using testing data.Assess how accurately the model can predict the outcome.
+
+Machine Learning Processes
+
+*Ml process involves buliding a predictive model that can be used to find a solution for a problem statement.
+*Steps to be followed to solve any problems using ML->
+ 1.Define objective of the problem
+ 2.Dtat gathering
+ 3.Dta preparation
+ 4.Dta exploration
+ 5.Model building
+ 6.Model Evaluation
+ 7.Prediction
+
+*Types of ML
+
+-The ML algorithms can be assigned to one of three broad categories
+
+ 1.Supervised
+ -All data is Labeled.
+ -The algorithms learn to predict the output from input data.
+ -The algorithm learns with an external guidance.
+
+ 2.Unsupervised
+ -All dat is Unlabeled.
+ -The algorithms learn to extract similar structure from input data.
+ -The algorithm learns by itself using dataset.
+
+ 3.Reinforcement
+ -The machine learns by itself fter making many mistakes and correcting them.
+
+*Supervised Learning Algorithms
+
+ -Linear Regression
+ -Logistic Regression
+ -K-nearest neighbour
+ -Decision tree
+ -Random forest
+ -Naive bytes
+ -Support Vector Machine
+
+*Unsupervised Learning Algorithms
+
+ -K-means
+ -Fuzzy c means
+ -Hierarchial Clustering
+ -Expectation maximization
+ -DBSCAN
+ -Apriori
+
+*Reinforcement Learning Algorithms
+
+ -Q-Learning
+ -State-Action-Reward-State-Action(SARSA)
+ -Deep Q Network(DQN)
+ -Deep Deterministic Policy gradient(DDPG)
+
+*Categories of ML
+
+-All read world ML problems will fall into any one of these major category algorithms.
+ -Regression (Supervised)
+ -Classification (Supervised)
+ -Clustering(Unsupervised)
+ -Association(Unsupervised)
+
+*Supervised Learning problems can be further divided into 
+
+ -Regression
+	The target attribute is  numerical such as predict the weather level.
+ -Classification
+	The target attribute is categorical such as classify the climate is hot/cold.
+
+*Unsupervised Learning problems can be further divided into
+
+ -Clustering
+	Discover the similar patterns to perform grouping in the data,such as grouping customers by
+	purchasing behaviour.
+ -Association
+	Discover rules that describe large portions of your data,such as people that buy X also tend
+	to buy Y.
+
+*Python Libraries for ML
+
+ -Library is a collection of funactions and methods that helps in comleting specific tasks.
+ -Also it saves developers a significant amount of time.
+ -Most common libraries for ML are
+	Numpy
+	pandas
+	Matplotlib
+	Scipy
+	scikit-learn
+	Tensorflow
+	Keras
+
+*Case Study
+
+-Flower Species classification using KNN
+1.Import necessary libraries
+
+from sklearn,neighbours import KNeighboursClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.datsets import load_iris
+
+2.loading data
+
+IrisData=load_iris()
+
+3.Pre-processing data
+
+4.Creature feature and target Arrays
+X=IrisData.data
+Y=IrisData.target
+
+5.Split data to training and testing set
+
+X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.25,random_state=42)
+
+6.fit KNN classifier model to training dataset
+
+knn= KNeighboursClassifier(n_neighbours=7)
+knn.fit(X_train,Y_train)
+
+7.Predicting result with testing dataset
+
+Y_pred=knn.predict(X_test)
+
+*Deep Learning
+
+-DL inspired by the information processing patterns found innhuman brains
+-Bulid Learning models that mimic brain.
+-Artificial neural networks (ANNs)are a type of lgorithm that aim to initiate the way our brains make decisions.
+-Humans use their brains to identify patterns and classify various types of information
+-Our brain usually tries to decipher the information it recieves.
+-Whenever we receive a new information our brain tries to compare it to a knowm item before making sense of it.
+-Artificial Neural Networks with representation learning.
+
+*ML vs DL
+
+-ML requires the features to be provided manually
+-ML depends on how accurately features are identified and extracted.
+-DL learn high level features from data.
+-DL eliminates domain expertise and hard-feature extraction.
+
+*Deep Learning Models
+
+-Convolutional Neural Networks(CNNs)
+-Recurrent Neural Networks(RNNs)
+-Auto Encoders(AEs)
+-Deep Belief Networks(DBNs)
+-Generative Adversarial Networks(GANs)
+
+*Layers in DL
+-3 different layers:
+
+-Input Layers
+-Hidden Layers 
+  -Convolutional layer
+  -Activation layer
+  -Batch normalisation layer
+  -Dropout layer
+  -Pooling layer
+  -Flatten layer
+  -Dense layer
+-Output Layer
+
+*Implementing Deep Learning Models
+1.Import necessary libraries
+ import numpy as np
+ from keras.datsets import mnist
+ from keras.models import Sequential
+ from keras.layers import Con2D
+ from keras.layers import MaxPooling2D
+ from keras.layers import Dense
+ from keras.layers import Dropout
+ from keras.layers import Flatten
+
+2.load data
+ (X_train,Y_train),(X_test,Y_test)=mnist.load_data()
+
+3.preprocessing the data if any
+
+4.create model
+
+ model=Sequential()
+ model.add(Conv2D(32,(5,5),input_shape(28,28,1),activation='relu'))
+ model.add(MaxPooling2D(pool_size=(2,2)))
+ model.add(Dropout(0.2))
+ model.add(Flatten())
+ model.add(Dense(128,activation='relu'))
+ model.add(Dense(num_classes,activation='softmax))
+
+5.Compile model
+ model.compile(loss='categorical_crossentropy',optimiser='adam',metrics=['accuracy'])
+
+6.Fit the model
+ model.fit(X-train,Y-train,epochs=10,batch_size=200,verbose=1)
+
+7.Evaluation of model
+ scores=model.evaluate(X_test,Y_test,verbose=1)
+
+8.Prediction of model
+ predictions=model.predict(X_test)
+
+*Deep Learning Process
+-Understanding problem and checking if deep learning is good or not
+-Identifies relevant data sets and prepares them for analysis
+-Choosing type of deep learning Algorithm to use
+-Trains algorithm on large amount of labeled data
+-Test the model's perfoermance against unlabelled data.
+
